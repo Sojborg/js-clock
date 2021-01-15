@@ -8,7 +8,7 @@ function setClock() {
   const currentDate = new Date();
   const seconds = currentDate.getSeconds() / 60;
   const minutes = (seconds+currentDate.getMinutes()) / 60;
-  const hours = (minutes + currentDate.getHours()) / 24;
+  const hours = ((minutes + convertTo12Hour(currentDate.getHours())) / 12);
 
   setRotation(secondHand, seconds);
   setRotation(minuteHand, minutes);
@@ -17,6 +17,10 @@ function setClock() {
 
 function setRotation(element, rotationRatio) {
   element.style.setProperty('--rotation', rotationRatio * 360);
+}
+
+function convertTo12Hour(hour24) {
+  return ((hour24 + 11) % 12 + 1);
 }
 
 setClock();
