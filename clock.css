@@ -19,6 +19,22 @@ body {
   box-sizing: border-box;
 }
 
+.clock::after {  
+  content: "";
+  background-image: url('./agf-logo.svg');
+  background-size: 60%;
+  background-repeat: no-repeat;
+  background-position-x: center;
+  background-position-y: center;
+  opacity: 0.5;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;
+}
+
 .clock .center {
   position:absolute;
   top: 50%;
@@ -68,12 +84,16 @@ body {
 
 .clock .hand.hour {
   width: 3px;
-  height: 35%;
+  height: 30%;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
 }
 
 .clock .hand.minute {
   width: 7px;
-  height: 40%;
+  height: 35%;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
 }
 
 .clock .hand.second {
